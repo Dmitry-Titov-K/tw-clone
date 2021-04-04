@@ -4,8 +4,7 @@ import InputLabel from "@material-ui/core/InputLabel";
 import Dialog from "@material-ui/core/Dialog";
 import { useStylesSignIn } from "../../pages/Singin";
 import DialogContent from "@material-ui/core/DialogContent";
-import Select from "@material-ui/core/Select";
-import MenuItem from "@material-ui/core/MenuItem";
+
 import DialogTitle from "@material-ui/core/DialogTitle";
 import TwitterIcon from "@material-ui/icons/Twitter";
 import NativeSelect from "@material-ui/core/NativeSelect";
@@ -32,9 +31,16 @@ const ModalRegister: React.FC<IRegisterProps> = ({
   classes,
   visible = false,
 }: IRegisterProps): React.ReactElement | null => {
-  const [age, setAge] = React.useState("");
-  const [month, setMonth] = React.useState("");
-  const [day, setDay] = React.useState("");
+  const [age, setAge] = React.useState<string>(
+    ""
+  );
+  const [
+    month,
+    setMonth,
+  ] = React.useState<unknown>("");
+  const [day, setDay] = React.useState<string>(
+    ""
+  );
 
   const handleChange = (
     event: React.ChangeEvent<{ value: unknown }>

@@ -14,7 +14,7 @@ import ShareOutlinedIcon from "@material-ui/icons/ShareOutlined";
 import RepeatOutlinedIcon from "@material-ui/icons/RepeatOutlined";
 import classNames from "classnames";
 import React from "react";
-import { HomeStyles } from "../../pages/Home";
+import { HomeStyles } from "../../styles/HomeStyle";
 
 const StyledBadge = withStyles(() =>
   createStyles({

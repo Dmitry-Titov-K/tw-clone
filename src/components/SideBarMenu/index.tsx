@@ -17,7 +17,9 @@ import ListAltOutlinedIcon from "@material-ui/icons/ListAltOutlined";
 import BookmarkBorderOutlinedIcon from "@material-ui/icons/BookmarkBorderOutlined";
 import PersonOutlineOutlinedIcon from "@material-ui/icons/PersonOutlineOutlined";
 import SearchIcon from "@material-ui/icons/Search";
-import { HomeStyles } from "../../pages/Home";
+import { HomeStyles } from "../../styles/HomeStyle";
+import { ModalBlock } from "../Modal";
+import { AddTweetForm } from "../AddTweetForm";
 
 interface ISideBarProps {
   classes: ReturnType<typeof HomeStyles>;
@@ -26,6 +28,14 @@ interface ISideBarProps {
 export const SideBarMenu: React.FC<ISideBarProps> = ({
   classes,
 }: ISideBarProps): React.ReactElement => {
+  const [
+    visible,
+    setVisible,
+  ] = React.useState<boolean>(false);
+
+  const handlerClickVisible = (): void => {
+    setVisible(!visible);
+  };
   return (
     <List className={classes.sideBarMenuWrapper}>
       <ListItem>
@@ -154,10 +164,21 @@ export const SideBarMenu: React.FC<ISideBarProps> = ({
           variant="contained"
           color="primary"
           fullWidth
+          onClick={handlerClickVisible}
         >
           Твитануть
         </Button>
       </ListItem>
+      <ModalBlock
+        visible={visible}
+        handleClose={handlerClickVisible}
+        children={
+          <AddTweetForm
+            classes={classes}
+            modal={true}
+          />
+        }
+      />
     </List>
   );
 };

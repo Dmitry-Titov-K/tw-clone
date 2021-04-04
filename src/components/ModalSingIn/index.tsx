@@ -1,6 +1,6 @@
 import React from "react";
 import Button from "@material-ui/core/Button";
-import InputLabel from "@material-ui/core/InputLabel";
+
 import Dialog from "@material-ui/core/Dialog";
 import { useStylesSignIn } from "../../pages/Singin";
 import DialogContent from "@material-ui/core/DialogContent";
@@ -9,11 +9,10 @@ import TwitterIcon from "@material-ui/icons/Twitter";
 
 import {
   FormControl,
-  Grid,
-  Link,
   TextField,
   Typography,
 } from "@material-ui/core";
+import { NavLink } from "react-router-dom";
 
 interface IRegisterProps {
   classes: ReturnType<typeof useStylesSignIn>;
@@ -72,6 +71,7 @@ const ModalSingIn: React.FC<IRegisterProps> = ({
             size="medium"
             color="primary"
             variant="contained"
+            href="/home"
           >
             Войти
           </Button>

@@ -5,7 +5,10 @@ import { Switch, Route } from "react-router-dom";
 
 function App() {
   return (
-    <div className="App">
+    <div
+      className="App"
+      style={{ minHeight: "100vh" }}
+    >
       <Switch>
         <Route path="/home" component={Home} />
         <Route path="/" component={Singin} />

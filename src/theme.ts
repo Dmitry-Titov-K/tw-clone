@@ -56,7 +56,13 @@ theme.overrides = {
   },
   MuiDialog: {
     paper: {
+      minWidth: "600px",
       borderRadius: 15,
+    },
+  },
+  MuiDivider: {
+    root: {
+      backgroundColor: "rgba(148,148,148,0.2)",
     },
   },
   MuiTypography: {
